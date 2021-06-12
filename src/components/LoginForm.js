@@ -4,7 +4,15 @@ class LoginForm extends React.Component {
   constructor() {
     super();
 
-    this.state = {};
+    this.state = {
+      username: "",
+      password: ""
+    };
+  }
+
+  handleLogin(event) {
+    console.log(event.target.username)
+    console.log(event.target.password)
   }
 
   render() {
@@ -13,13 +21,13 @@ class LoginForm extends React.Component {
         <div>
           <label>
             Username
-            <input id="username" name="username" type="text" />
+            <input id="username" name="username" value={this.state.username} onChange={this.handleUsernameChange} type="text" />
           </label>
         </div>
         <div>
           <label>
             Password
-            <input id="password" name="password" type="password" />
+            <input id="password" name="password" value={this.state.password} onChange={this.handlePasswordChange}type="password" />
           </label>
         </div>
         <div>
